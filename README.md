@@ -21,7 +21,8 @@ Current supported KG:
 - [BioLAMA](https://arxiv.org/pdf/2110.08173.pdf)
   - umls
   - wiki-bio
-
+    
+The preprocessed data can be found [here](https://drive.google.com/drive/folders/1Y17Hcnh9bjmOrxfU-R2ktgu444QQh9_2?usp=sharing).
 ### T-REx
 Example of T-REx relation
 ```json
