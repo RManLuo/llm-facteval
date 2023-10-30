@@ -1,0 +1,4 @@
+{context}
+Please answer the following questions based on the facts in the real-world. Please keep the answer as simple as possible and return the possible answers as a list.
+
+QUESTION: {question}

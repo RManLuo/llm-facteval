@@ -1,6 +1,7 @@
 import argparse
 import certlm.registry as registry
 
+
 def get_args():
     parser = argparse.ArgumentParser(description='Certified LM')
     parser.add_argument('--step', type=str, help="Steps: extract, question_generate, answer_samplers",
@@ -9,6 +10,8 @@ def get_args():
                         choices=registry.KG_REGISTRY.keys())
     parser.add_argument('--generator', type=str, help="Generator type",
                         choices=registry.QUES_GEN_REGISTRY.keys())
+    parser.add_argument('--answer-sampler', type=str, help="Answer sampler type",
+                        choices=registry.ANS_SAMPLER_REGISTRY.keys())
     parser.add_argument('--generator-lm', type=str, help="Generator LM",
                         choices=registry.LANGUAGE_MODEL_REGISTRY.keys())
     parser.add_argument('--eval-lm', type=str, help="LM to be evaluated",
@@ -19,12 +22,15 @@ def get_args():
     args, _ = parser.parse_known_args()
 
     # Add args
-    registry.KG_REGISTRY[args.kg].add_args(parser)
+    if args.kg:
+        registry.KG_REGISTRY[args.kg].add_args(parser)
     if args.step == 'question_generate':
         registry.QUES_GEN_REGISTRY[args.generator].add_args(parser)
     elif args.step == 'answer_sampling':
-        registry.ANS_SAMPLER_REGISTRY[args.kg].add_args(parser)
+        registry.ANS_SAMPLER_REGISTRY[args.answer_sampler].add_args(parser)
+        if args.eval_lm:
+            registry.LANGUAGE_MODEL_REGISTRY[args.eval_lm].add_args(parser)
     if args.generator_lm:
         registry.LANGUAGE_MODEL_REGISTRY[args.generator_lm].add_args(parser)
-        
+
     return parser.parse_args()

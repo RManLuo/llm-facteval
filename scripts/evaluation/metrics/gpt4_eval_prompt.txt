@@ -1,0 +1,3 @@
+Answer the question by printing only a single choice from {choices} (without quotes or punctuation) corresponding to the correct answer with no other text.
+
+{question}

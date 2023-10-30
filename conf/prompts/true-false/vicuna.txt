@@ -1,0 +1,9 @@
+{context}
+The following sentence describes a real-world  fact. Please predict whether this fact is correct or not? Please only return correct or incorrect. If don't know, please answer UNKNOWN. If correct, answer CORRECT. If incorrect, answer INCORRECT.
+
+
+HUMAN:
+{question}
+
+
+ASSISTANT:

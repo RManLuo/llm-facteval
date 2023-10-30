@@ -3,6 +3,7 @@ import os
 import sys
 import certlm.registry as registry
 from certlm import options
+from certlm.answer_gen import run_answer_sampling
 from certlm.extractor import run_extract
 from certlm.question_generator import run_generation
 
@@ -29,7 +30,8 @@ def generate_question(args):
   run_generation(generator, extractor, kg, args.num_workers)
 
 def sampling_answer(args):
-  pass
+  sampler = registry.get_answer_sampler(args.answer_sampler)(args)
+  run_answer_sampling(sampler)
 
 def main_cli():
   args = options.get_args()

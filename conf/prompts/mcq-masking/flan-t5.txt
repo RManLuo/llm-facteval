@@ -1,0 +1,7 @@
+{context}
+Please predict the missing words to complete the following sentence based on the facts in the real-world. The missing words are represented by [MASK]. Please select the missing words from the given choices and return the words only.
+
+QUESTION: {question}
+
+CHOICES:
+{choices}

@@ -1,0 +1,7 @@
+{context}
+Please answer the following questions based on the facts in the real-world. Please select the answers from the given choices and return the answer only.
+
+QUESTION: {question}
+
+CHOICES:
+{choices}

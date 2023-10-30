@@ -2,7 +2,7 @@ import time
 
 import openai
 
-from certlm.lanugage_models.base_language_model import BaseLanguageModel
+from certlm.language_models.base_language_model import BaseLanguageModel
 from certlm.utils.util import LMResponse, LMInput
 
 OPENAI_MODEL = ['gpt-4', 'gpt-3.5-turbo']
