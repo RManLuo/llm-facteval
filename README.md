@@ -1,4 +1,6 @@
 # LLM-facteval
+Source code of paper ["Systematic Assessment of Factual Knowledge in Large Language Models"](https://arxiv.org/abs/2310.11638) - EMNLP Findings 2023
+
 
 Our framework contains four main components:
 - `kg`: declare how to read and preprocess knowledge graph
@@ -133,4 +135,15 @@ python run_certlm.py --step question_generate \
     --data-dir ./examples/TREx \
     --data-file relations.jsonl \
     --gen-input-dir ./output/tuples 
+```
+
+# Citation
+If this repo is useful for your own research, please cite us with the following bibtex entry
+```
+@article{luo2023systematic,
+  title={Systematic Assessment of Factual Knowledge in Large Language Models},
+  author={Luo, Linhao and Vu, Thuy-Trang and Phung, Dinh and Haffari, Gholamreza},
+  journal={Findings of EMNLP},
+  year={2023}
+}
 ```
