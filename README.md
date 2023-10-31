@@ -7,8 +7,12 @@ Our framework contains four main components:
 - `extractor`: to extract question triplets, nodes and relation summary from the knowledge graph.
 - `generator`: to generate questions/answers from extracted triplets
 - `evaluator`: to evaluate LLM's response
-
 Check `certlm/registry.py` for the list of supported extractors, generators and evaluators
+
+## Reproducibility
+Please check [this document](scripts/README.md) for steps to reproduce our experiments in the paper.
+
+## Adding new KGs to the framework
 ### Knowledge Graph (KG)
 For a new KG dataset, it should extend the `certlm.kg_dataset.BaseKG` class and implement following methods:
 - `load_relation()`: load all available relations to `self.relations`

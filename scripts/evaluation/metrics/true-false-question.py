@@ -2,9 +2,7 @@ import argparse
 import glob
 import json
 import os
-from dateutil.parser import parse
 from nltk import word_tokenize
-from sklearn.metrics import accuracy_score
 
 def test_unknown_response(unk_list, response):
     normalize_response = response.lower()
