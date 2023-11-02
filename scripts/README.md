@@ -21,9 +21,9 @@ do
         --output-dir ./extracted_output/${KG_NAME}/ 
 done
 ```
-After extracting the triplets, you can generate questions by using the `generate_questions.sh` script. The generated questions will be stored in `./generated_question` folder.
+After extracting the triplets, you can generate questions by using the `question-generation/generate_questions.sh` script. The generated questions will be stored in `./generated_question` folder.
 ```bash
-./generate_questions.sh {KG_NAME} {GENERATOR}
+./question-generation/generate_questions.sh {KG_NAME} {GENERATOR}
 ```
 We support four KG datasets: `trex, google_re, umls, wiki_bio`.
 
