@@ -1,0 +1,5 @@
+extracted_output/*
+generated_question/*
+kg_examples/*
+*.pyc
+.DS_Store

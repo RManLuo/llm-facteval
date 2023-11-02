@@ -1,6 +1,44 @@
 # Reproduction of EMNLP2023 Experiments
 ## Question Generation
+
+### Download data
+You can download the example KGs from [here](https://drive.google.com/drive/folders/1Y17Hcnh9bjmOrxfU-R2ktgu444QQh9_2?usp=sharing).
+
+Download the `kg_examples` and put it in the root folder of the project.
+
 ### Extract triplets and generate questions
+To extract triplets form the KGs, you can run the `extract_kg.sh` script. The extracted triplets will be stored in `./extracted_output` folder.
+```bash
+#!/bin/bash
+
+KG_LIST="trex google_re umls wiki_bio"
+
+for KG_NAME in ${KG_LIST}
+do
+    python run_certlm.py --step extract \
+        --kg ${KG_NAME} \
+        --data-dir ./kg_examples/${KG_NAME} \
+        --output-dir ./extracted_output/${KG_NAME}/ 
+done
+```
+After extracting the triplets, you can generate questions by using the `generate_questions.sh` script. The generated questions will be stored in `./generated_question` folder.
+```bash
+./generate_questions.sh {KG_NAME} {GENERATOR}
+```
+We support four KG datasets: `trex, google_re, umls, wiki_bio`.
+
+We support three types of question generator:
+- `template`: generate questions from predefined templates
+- `masking`: generate questions with ChatGPT by masking the subject and object.
+- `qa`: generate questions with ChatGPT with Wh-question form.
+
+Example:
+```bash
+./generate_questions.sh trex template
+./generate_questions.sh trex masking
+./generate_questions.sh trex qa
+```
+
 
 ### Benchmark Creation
 We create the benchmark by splitting the questions by the relation name, question types and answer types. We support following question types:
@@ -161,3 +199,12 @@ python collect-main-result-single-answer.py --data-dir $DATA_DIR --out-file $OUT
 
 ### Analysis
 #### Question Diversity
+To analyze the diversity of generated questions, we use the SelfBleu metric. 
+```bash
+./question_diversity.sh
+```
+### Question Similarity
+To analyze the similarity between LLM-generated questions and template-generated questions, we calculate the similarity with bert score.
+```bash
+./question_sim.sh
+```

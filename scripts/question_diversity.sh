@@ -1,4 +1,4 @@
-KG_LIST="trex umls wiki_bio"
+KG_LIST="trex google_re umls wiki_bio"
 
 for KG_NAME in ${KG_LIST}
 do
