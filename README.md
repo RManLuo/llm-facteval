@@ -28,7 +28,7 @@ Current supported KG:
   - umls
   - wiki-bio
     
-The preprocessed data can be found [here](https://drive.google.com/drive/folders/1Y17Hcnh9bjmOrxfU-R2ktgu444QQh9_2?usp=sharing).
+The preprocessed data can be found [here](https://1drv.ms/f/c/cb4bbdfe5951d1a1/IgAOj0MHi82xS6qttXdco8SOAU98rMAxGf4pF4s3vMiiGLw?e=9dtMSg).
 ### T-REx
 Example of T-REx relation
 ```json
